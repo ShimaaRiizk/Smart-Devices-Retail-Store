@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyStore</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+
+    header .logo {
+      font-size: 24px;
+      color: darkolivegreen;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: darkolivegreen;
+    }
+
+    h2 {
+      text-align: center;
+      color: darkolivegreen;
+      margin: 30px 0 20px;
+    }
+
+    .separator {
+      width: 90%;
+      margin: 20px auto;
+      border-top: 1px solid #ddd;
+    }
+
+    .photo {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 40px 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+      width: 220px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: darkolivegreen;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #888;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .photo {
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyStore</div>
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <h2>Our Products</h2>
+
+  <div class="photo">
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image1.webp" alt="Headphones" />
+      <h3>Wireless Headphones</h3>
+      <p>Experience high-quality sound with noise cancellation and long battery life.</p>
+      <div class="price">$99.99</div>
+    </div>
+
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image2.jpg" alt="Watch" />
+      <h3>Smart Watch</h3>
+      <p>Stay connected and track fitness with this sleek and durable smart watch.</p>
+      <div class="price">$149.99</div>
+    </div>
+
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image3.webp" alt="Bluetooth Speaker" />
+      <h3>Bluetooth Speaker</h3>
+      <p>Portable speaker with rich sound and waterproof design for outdoor use.</p>
+      <div class="price">$59.99</div>
+    </div>
+
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image 4.jpg" alt="Mouse" />
+      <h3>Gaming Mouse</h3>
+      <p>High precision sensor and customizable buttons for the ultimate gaming experience.</p>
+      <div class="price">$39.99</div>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="photo">
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image5.avif" alt="Monitor" />
+      <h3>4K Monitor</h3>
+      <p>Stunning 27-inch 4K display with vivid colors and wide viewing angles.</p>
+      <div class="price">$329.99</div>
+    </div>
+
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image6.webp" alt="Mechanical Keyboard" />
+      <h3>Mechanical Keyboard</h3>
+      <p>Durable keyboard with tactile switches and customizable lighting effects.</p>
+      <div class="price">$89.99</div>
+    </div>
+
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image 7.webp" alt="Fitness Tracker" />
+      <h3>Fitness Tracker</h3>
+      <p>Monitor your health and activity with this lightweight and waterproof tracker.</p>
+      <div class="price">$49.99</div>
+    </div>
+
+    <div class="card">
+      <img src="C:/Users/Best By/Documents/Informatic Project/Images/image 8.jpg" alt="Camera" />
+      <h3>Drone Camera</h3>
+      <p>Capture stunning aerial footage with this easy-to-fly drone and high-res camera.</p>
+      <div class="price">$399.99</div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 MyStore - All rights reserved
+  </footer>
+</body>
+</html>
