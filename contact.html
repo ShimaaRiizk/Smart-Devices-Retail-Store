@@ -32,13 +32,22 @@
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
       background: none;
+      position: relative;
     }
 
     .logo {
       font-size: 24px;
       color: darkolivegreen;
       font-weight: bold;
-      margin-bottom: 10px;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      color: darkolivegreen;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
 
     nav {
@@ -142,19 +151,26 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+      .menu-icon {
+        display: block;
       }
 
       nav {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
       }
 
-      #contactForm {
-        margin: 20px auto;
-        padding: 20px;
+      nav a {
+        background: none;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        color: darkolivegreen;
+      }
+
+      nav.active {
+        display: flex;
       }
     }
 
@@ -176,7 +192,8 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <nav>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navMenu">
       <a href="index.html"><i class="fas fa-home"></i>Home</a>
       <a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
       <a href="register.html"><i class="fas fa-user-plus"></i>Register</a>
@@ -207,5 +224,12 @@
   <footer>
     &copy; 2025 MyStore - All rights reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
