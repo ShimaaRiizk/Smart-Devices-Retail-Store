@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyStore - Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('C:/Users/Best By/Downloads/imar1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: darkolivegreen;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      color: darkolivegreen;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: darkolivegreen;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .login-box {
+      max-width: 350px;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+
+    .login-box h2 {
+      margin-bottom: 10px;
+      color: darkolivegreen;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .login-box p {
+      color: gray;
+      margin-bottom: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .login-box label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .options {
+      margin: 10px 0;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .options a {
+      color: darkolivegreen;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .login-btn {
+      width: 100%;
+      background-color: darkolivegreen;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #556b2f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      color: #888;
+      border-top: 1px solid #ddd;
+      background-color: #fff;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .login-box {
+        padding: 15px;
+      }
+
+      .login-box h2 {
+        font-size: 20px;
+      }
+
+      .login-btn {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        max-width: 90%;
+      }
+
+      .login-box input {
+        padding: 8px;
+        font-size: 13px;
+      }
+
+      .options {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyStore</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <div class="login-box">
+      <form action="#" method="POST">
+        <h2>Login to MyStore</h2>
+        <p>Please enter your login credentials below.</p>
+
+        <label for="email">Username</label>
+        <input type="email" id="email" name="email" placeholder="your-email@gmail.com" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Your Password" required>
+
+        <div class="options">
+          <a href="#">Forgot Password</a>
+        </div>
+
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 MyStore - All rights reserved
+  </footer>
+</body>
+</html>

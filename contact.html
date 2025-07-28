@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - MyStore</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('C:/Users/Best By/Downloads/imar1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: darkolivegreen;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      color: darkolivegreen;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: darkolivegreen;
+    }
+
+    #contactForm {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 500px;
+      width: 90%;
+      margin: 40px auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    #contactForm h1 {
+      font-size: 24px;
+      color: darkolivegreen;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    #contactForm p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-label {
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: border 0.3s ease;
+    }
+
+    .form-input:focus {
+      border-color: darkolivegreen;
+      outline: none;
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .button {
+      width: 100%;
+      background-color: darkolivegreen;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #556b2f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid #ddd;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
+
+      #contactForm {
+        margin: 20px auto;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
+
+      #contactForm h1 {
+        font-size: 20px;
+      }
+
+      .button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyStore</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <form id="contactForm" action="https://formsubmit.co/2301131@rst.edu.eg" method="POST">
+    <h1>Contact Us</h1>
+    <p>"Have a question or need assistance? Feel free to reach out — we're here to help!"</p>
+
+    <label for="name" class="form-label">Enter Your Name</label>
+    <input type="text" name="name" id="name" class="form-input" required>
+
+    <label for="email" class="form-label">Email Address</label>
+    <input type="email" name="email" id="email" class="form-input" required>
+
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="tel" name="phone" id="phone" class="form-input">
+
+    <label for="message" class="form-label">Message</label>
+    <textarea name="message" id="message" rows="5" cols="5" class="form-input" required></textarea>
+
+    <input type="submit" class="button" value="Send Message">
+  </form>
+
+  <footer>
+    &copy; 2025 MyStore - All rights reserved
+  </footer>
+</body>
+</html>

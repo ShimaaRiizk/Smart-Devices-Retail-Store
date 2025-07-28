@@ -1,0 +1,269 @@
+<!DOCTYPE html> 
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Registration Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif; 
+    }
+
+    body {
+      background-image: url('C:/Users/Best By/Downloads/imar1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+
+    header .logo {
+      font-size: 24px;
+      color: darkolivegreen;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: darkolivegreen;
+    }
+
+    .form-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px; 
+    }
+
+    .container {
+      max-width: 700px;
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+      color: #333;
+      width: 100%;
+    }
+
+    .container .title {
+      font-size: 25px;
+      color: darkolivegreen;
+      text-align: center;
+    }
+
+    .content form .user-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 12px 0;
+    }
+
+    .user-details .input-box {
+      margin-bottom: 15px;
+      width: calc(50% - 10px);
+    }
+
+    .user-details .input-box label {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .user-details .input-box input {
+      height: 45px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 5px;
+      padding-left: 15px;
+      border: 1px solid #ccc; 
+      margin-top: 5px;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-bottom: 30px;
+    }
+
+    .forgot-password a {
+      color: darkolivegreen; 
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      height: 45px;
+      margin-bottom: 25px;
+    }
+
+    .button input {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 18px;
+      background-color: darkolivegreen; 
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button input:hover {
+      background-color: #556b2f;
+    }
+
+    .signup {
+      text-align: center;
+      font-size: 17px;
+      margin-top: 20px;
+    }
+
+    .signup a {
+      color: darkolivegreen; 
+      text-decoration: none;
+    }
+
+    .signup a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .user-details .input-box {
+        width: 100%;
+      }
+
+      .container .title {
+        font-size: 22px;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
+
+      .button input {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+
+      .container .title {
+        font-size: 20px;
+      }
+
+      .button input {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyStore</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="form-wrapper">
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="content">
+        <form id="registerForm">
+          <div class="user-details">
+            <div class="input-box">
+              <label>Full Name</label>
+              <input type="text" id="fullname" placeholder="Enter your name" required>
+            </div>
+            <div class="input-box">
+              <label>User Name</label>
+              <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-box">
+              <label>Number</label>
+              <input type="text" id="number" placeholder="Enter your number" required>
+            </div>
+            <div class="input-box">
+              <label>Email</label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+              <label>Password</label>
+              <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="input-box">
+              <label>Confirm Password</label>
+              <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+          </div>
+
+          <div class="forgot-password">
+            <a href="forgot-password.html">Forgot Password?</a>
+          </div>
+
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+
+          <div class="signup">
+            Already have an account? <a href="login.html">Login here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
