@@ -125,13 +125,26 @@
       nav {
         display: none;
         flex-direction: column;
-        width: 100%;
+        width: 200px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        z-index: 10;
       }
 
       nav a {
-        padding: 10px 0;
+        padding: 10px;
+        text-align: left;
+        width: 100%;
         border-top: 1px solid #ddd;
         color: darkolivegreen;
+      }
+
+      nav a i {
+        background-color: rgba(85, 107, 47, 0.2);
       }
 
       nav.active {
@@ -140,10 +153,6 @@
 
       .hero-section h1 {
         font-size: 2rem;
-      }
-
-      nav a i {
-        background-color: rgba(85, 107, 47, 0.2);
       }
     }
 
@@ -170,7 +179,7 @@
     <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="login.html>Login</a>
-      <a href="register.html">Register</a>
+      <a href="register.html>Register</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
     </nav>
