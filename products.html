@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Registration Form</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyStore</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
       font-family: Arial, sans-serif;
+      box-sizing: border-box;
     }
 
     body {
-      background-image: url('Images/imar1.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      background-color: #fff;
+      color: #333;
     }
 
     header {
@@ -31,7 +23,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: transparent; /* Removed background */
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
       position: relative;
@@ -54,8 +46,9 @@
 
     nav {
       display: flex;
-      gap: 10px;
+      gap: 15px;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -69,7 +62,7 @@
     }
 
     nav a i {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(85, 107, 47, 0.1);
       color: darkolivegreen;
       padding: 6px;
       border-radius: 50%;
@@ -85,119 +78,86 @@
       color: #fff;
     }
 
-    .form-wrapper {
-      flex: 1;
+    h2 {
+      text-align: center;
+      color: darkolivegreen;
+      margin: 30px 0 20px;
+    }
+
+    .separator {
+      width: 90%;
+      margin: 20px auto;
+      border-top: 1px solid #ddd;
+    }
+
+    .photo {
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .container {
-      max-width: 700px;
-      background-color: #fff;
-      padding: 25px 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      color: #333;
-      width: 100%;
-    }
-
-    .container .title {
-      font-size: 25px;
-      color: darkolivegreen;
-      text-align: center;
-    }
-
-    .content form .user-details {
-      display: flex;
+      gap: 20px;
+      padding: 20px 40px 40px;
       flex-wrap: wrap;
-      justify-content: space-between;
-      margin: 20px 0 12px 0;
     }
 
-    .user-details .input-box {
-      margin-bottom: 15px;
-      width: calc(50% - 10px);
-    }
-
-    .user-details .input-box label {
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .user-details .input-box input {
-      height: 45px;
-      width: 100%;
-      font-size: 16px;
-      border-radius: 5px;
-      padding-left: 15px;
-      border: 1px solid #ccc;
-      margin-top: 5px;
-    }
-
-    .forgot-password {
-      text-align: right;
-      margin-bottom: 30px;
-    }
-
-    .forgot-password a {
-      color: darkolivegreen;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .forgot-password a:hover {
-      text-decoration: underline;
-    }
-
-    .button {
-      height: 45px;
-      margin-bottom: 25px;
-    }
-
-    .button input {
-      height: 100%;
-      width: 100%;
-      border-radius: 5px;
-      color: #fff;
-      font-size: 18px;
-      background-color: darkolivegreen;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .button input:hover {
-      background-color: #556b2f;
-    }
-
-    .signup {
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
       text-align: center;
-      font-size: 17px;
-      margin-top: 20px;
+      width: 220px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .signup a {
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
       color: darkolivegreen;
-      text-decoration: none;
-    }
-
-    .signup a:hover {
-      text-decoration: underline;
     }
 
     footer {
-      margin-top: auto;
       text-align: center;
-      padding: 10px;
+      padding: 20px;
       font-size: 13px;
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.5);
+      color: #888;
       border-top: 1px solid #ddd;
     }
 
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
       .menu-icon {
         display: block;
       }
@@ -215,38 +175,26 @@
         color: darkolivegreen;
       }
 
+      nav a i {
+        background-color: rgba(85, 107, 47, 0.2);
+      }
+
       nav.active {
         display: flex;
-      }
-
-      .user-details .input-box {
-        width: 100%;
-      }
-
-      .container .title {
-        font-size: 22px;
-      }
-
-      .button input {
-        font-size: 16px;
       }
     }
 
     @media (max-width: 480px) {
+      .card {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
       .logo {
-        font-size: 20px;
-      }
-
-      .container {
-        padding: 20px;
-      }
-
-      .container .title {
-        font-size: 20px;
-      }
-
-      .button input {
-        font-size: 15px;
+        font-size: 22px;
       }
     }
   </style>
@@ -254,61 +202,79 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
     <nav id="navMenu">
       <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
+      <a href="login.html>Login</a>
       <a href="register.html">Register</a>
       <a href="products.html">Products</a>
       <a href="contact.html>Contact</a>
     </nav>
   </header>
 
-  <div class="form-wrapper">
-    <div class="container">
-      <div class="title">Registration</div>
-      <div class="content">
-        <form id="registerForm">
-          <div class="user-details">
-            <div class="input-box">
-              <label>Full Name</label>
-              <input type="text" id="fullname" placeholder="Enter your name" required>
-            </div>
-            <div class="input-box">
-              <label>User Name</label>
-              <input type="text" id="username" placeholder="Enter your username" required>
-            </div>
-            <div class="input-box">
-              <label>Number</label>
-              <input type="text" id="number" placeholder="Enter your number" required>
-            </div>
-            <div class="input-box">
-              <label>Email</label>
-              <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="input-box">
-              <label>Password</label>
-              <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <div class="input-box">
-              <label>Confirm Password</label>
-              <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
-            </div>
-          </div>
+  <h2>Our Products</h2>
 
-          <div class="forgot-password">
-            <a href="forgot-password.html">Forgot Password?</a>
-          </div>
+  <div class="photo">
+    <div class="card">
+      <img src="Images/image1.webp" alt="Headphones" />
+      <h3>Wireless Headphones</h3>
+      <p>Experience high-quality sound with noise cancellation and long battery life.</p>
+      <div class="price">$99.99</div>
+    </div>
 
-          <div class="button">
-            <input type="submit" value="Register">
-          </div>
+    <div class="card">
+      <img src="Images/image2.jpg" alt="Watch" />
+      <h3>Smart Watch</h3>
+      <p>Stay connected and track fitness with this sleek and durable smart watch.</p>
+      <div class="price">$149.99</div>
+    </div>
 
-          <div class="signup">
-            Already have an account? <a href="login.html">Login here</a>
-          </div>
-        </form>
-      </div>
+    <div class="card">
+      <img src="Images/image3.webp" alt="Bluetooth Speaker" />
+      <h3>Bluetooth Speaker</h3>
+      <p>Portable speaker with rich sound and waterproof design for outdoor use.</p>
+      <div class="price">$59.99</div>
+    </div>
+
+    <div class="card">
+      <img src="Images/image 4.jpg" alt="Mouse" />
+      <h3>Gaming Mouse</h3>
+      <p>High precision sensor and customizable buttons for the ultimate gaming experience.</p>
+      <div class="price">$39.99</div>
+    </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="photo">
+    <div class="card">
+      <img src="Images/image5.avif" alt="Monitor" />
+      <h3>4K Monitor</h3>
+      <p>Stunning 27-inch 4K display with vivid colors and wide viewing angles.</p>
+      <div class="price">$329.99</div>
+    </div>
+
+    <div class="card">
+      <img src="Images/image6.webp" alt="Mechanical Keyboard" />
+      <h3>Mechanical Keyboard</h3>
+      <p>Durable keyboard with tactile switches and customizable lighting effects.</p>
+      <div class="price">$89.99</div>
+    </div>
+
+    <div class="card">
+      <img src="Images/image 7.webp" alt="Fitness Tracker" />
+      <h3>Fitness Tracker</h3>
+      <p>Monitor your health and activity with this lightweight and waterproof tracker.</p>
+      <div class="price">$49.99</div>
+    </div>
+
+    <div class="card">
+      <img src="Images/image 8.jpg" alt="Camera" />
+      <h3>Drone Camera</h3>
+      <p>Capture stunning aerial footage with this easy-to-fly drone and high-res camera.</p>
+      <div class="price">$399.99</div>
     </div>
   </div>
 
