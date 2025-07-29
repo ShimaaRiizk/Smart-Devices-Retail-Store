@@ -1,9 +1,10 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Responsive Registration Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
       margin: 0;
@@ -22,20 +23,20 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.7);
       border-bottom: 1px solid #ddd;
       width: 100%;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       flex-wrap: wrap;
     }
 
-    header .logo {
+    .logo {
       font-size: 24px;
       color: darkolivegreen;
       font-weight: bold;
@@ -46,6 +47,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      align-items: center;
     }
 
     nav a {
@@ -53,10 +55,26 @@
       color: #333;
       font-size: 16px;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     nav a:hover {
       color: darkolivegreen;
+    }
+
+    nav a i {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: darkolivegreen;
+      padding: 6px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover i {
+      background-color: darkolivegreen;
+      color: #fff;
     }
 
     .form-wrapper {
