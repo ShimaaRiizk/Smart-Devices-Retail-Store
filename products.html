@@ -70,6 +70,20 @@
       color: darkolivegreen;
     }
 
+  
+    nav a i {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: darkolivegreen;
+      padding: 6px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover i {
+      background-color: darkolivegreen;
+      color: #fff;
+    }
+
     .hero-section {
       margin-top: 30px;
       text-align: center;
@@ -105,7 +119,6 @@
       }
 
       nav a {
-        background: none;
         padding: 10px 0;
         border-top: 1px solid #ddd;
         color: darkolivegreen;
@@ -117,6 +130,10 @@
 
       .hero-section h1 {
         font-size: 2rem;
+      }
+
+      nav a i {
+        background-color: rgba(85, 107, 47, 0.2);
       }
     }
 
@@ -135,7 +152,7 @@
   <header>
     <div class="logo">MyStore</div>
     <div class="menu-icon" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i> <!-- Burger menu icon -->
+      <i class="fas fa-bars"></i>
     </div>
     <nav id="navMenu">
       <a href="index.html">Home</a>
