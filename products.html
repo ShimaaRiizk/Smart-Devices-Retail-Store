@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyStore</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
       margin: 0;
@@ -25,19 +27,27 @@
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
+      position: relative;
     }
 
     header .logo {
       font-size: 24px;
       color: darkolivegreen;
       font-weight: bold;
-      margin-bottom: 10px;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: darkolivegreen;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      background-color: transparent;
     }
 
     nav a {
@@ -114,6 +124,26 @@
       font-size: 16px;
       font-weight: bold;
       color: darkolivegreen;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      background-color: darkolivegreen;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+    }
+
+    .card button i {
+      margin-right: 5px;
+    }
+
+    .card button:hover {
+      background-color: #556b2f;
     }
 
     footer {
@@ -124,19 +154,39 @@
       border-top: 1px solid #ddd;
     }
 
+   
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+        background-color: #f5f5f5; 
+        padding: 15px 20px; 
+      }
+
+      .logo {
+        font-size: 20px; 
+      }
+
+      .menu-icon {
+        display: block;
       }
 
       nav {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 10px 20px;
+        border-top: 1px solid #ddd;
       }
 
-      .logo {
-        font-size: 22px;
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        margin: 8px 0;
       }
 
       h2 {
@@ -167,7 +217,8 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <nav>
+    <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+    <nav id="navLinks">
       <a href="index.html">Home</a>
       <a href="login.html">Login</a>
       <a href="register.html">Register</a>
@@ -184,6 +235,7 @@
       <h3>Wireless Headphones</h3>
       <p>Experience high-quality sound with noise cancellation and long battery life.</p>
       <div class="price">$99.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
     <div class="card">
@@ -191,6 +243,7 @@
       <h3>Smart Watch</h3>
       <p>Stay connected and track fitness with this sleek and durable smart watch.</p>
       <div class="price">$149.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
     <div class="card">
@@ -198,13 +251,15 @@
       <h3>Bluetooth Speaker</h3>
       <p>Portable speaker with rich sound and waterproof design for outdoor use.</p>
       <div class="price">$59.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
     <div class="card">
-      <img src="Images/image 4.jpg" alt="Mouse" />
+      <img src="Images/image4.jpg" alt="Mouse" />
       <h3>Gaming Mouse</h3>
       <p>High precision sensor and customizable buttons for the ultimate gaming experience.</p>
       <div class="price">$39.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
   </div>
 
@@ -216,6 +271,7 @@
       <h3>4K Monitor</h3>
       <p>Stunning 27-inch 4K display with vivid colors and wide viewing angles.</p>
       <div class="price">$329.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
     <div class="card">
@@ -223,24 +279,35 @@
       <h3>Mechanical Keyboard</h3>
       <p>Durable keyboard with tactile switches and customizable lighting effects.</p>
       <div class="price">$89.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
     <div class="card">
-      <img src="Images/image 7.webp" alt="Fitness Tracker" />
+      <img src="Images/image7.webp" alt="Fitness Tracker" />
       <h3>Fitness Tracker</h3>
       <p>Monitor your health and activity with this lightweight and waterproof tracker.</p>
       <div class="price">$49.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
 
     <div class="card">
-      <img src="Images/image 8.jpg" alt="Camera" />
+      <img src="Images/image8.jpg" alt="Camera" />
       <h3>Drone Camera</h3>
       <p>Capture stunning aerial footage with this easy-to-fly drone and high-res camera.</p>
       <div class="price">$399.99</div>
+      <button><i class="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
   </div>
 
   <footer>
     &copy; 2025 MyStore - All rights reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
+</html>
