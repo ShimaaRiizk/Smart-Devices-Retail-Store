@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Responsive Registration Form</title>
-  <!-- Font Awesome for Icons -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif; 
+      font-family: Arial, sans-serif;
     }
 
     body {
@@ -28,25 +28,31 @@
     header {
       display: flex;
       justify-content: space-between;
-      align-items: left;
+      align-items: center;
       padding: 20px 40px;
-      background-color: rgba(255, 255, 255, 0.7); 
+      background-color: rgba(255, 255, 255, 0.7);
       border-bottom: 1px solid #ddd;
-      width: 100%;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       flex-wrap: wrap;
+      position: relative;
     }
 
     .logo {
       font-size: 24px;
       color: darkolivegreen;
       font-weight: bold;
-      margin-bottom: 10px;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      color: darkolivegreen;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
       align-items: center;
     }
@@ -61,16 +67,16 @@
       gap: 6px;
     }
 
-    nav a:hover {
-      color: darkolivegreen;
-    }
-
     nav a i {
       background-color: rgba(255, 255, 255, 0.3);
       color: darkolivegreen;
       padding: 6px;
       border-radius: 50%;
       transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: darkolivegreen;
     }
 
     nav a:hover i {
@@ -83,7 +89,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px; 
+      padding: 40px 20px;
     }
 
     .container {
@@ -91,7 +97,7 @@
       background-color: #fff;
       padding: 25px 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       color: #333;
       width: 100%;
     }
@@ -125,7 +131,7 @@
       font-size: 16px;
       border-radius: 5px;
       padding-left: 15px;
-      border: 1px solid #ccc; 
+      border: 1px solid #ccc;
       margin-top: 5px;
     }
 
@@ -135,7 +141,7 @@
     }
 
     .forgot-password a {
-      color: darkolivegreen; 
+      color: darkolivegreen;
       text-decoration: none;
       font-size: 14px;
     }
@@ -155,7 +161,7 @@
       border-radius: 5px;
       color: #fff;
       font-size: 18px;
-      background-color: darkolivegreen; 
+      background-color: darkolivegreen;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -172,7 +178,7 @@
     }
 
     .signup a {
-      color: darkolivegreen; 
+      color: darkolivegreen;
       text-decoration: none;
     }
 
@@ -180,15 +186,36 @@
       text-decoration: underline;
     }
 
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid #ddd;
+    }
+
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+      .menu-icon {
+        display: block;
       }
 
       nav {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav a {
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        color: darkolivegreen;
+      }
+
+      nav.active {
+        display: flex;
       }
 
       .user-details .input-box {
@@ -205,6 +232,10 @@
     }
 
     @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
+
       .container {
         padding: 20px;
       }
@@ -222,12 +253,13 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
-      <a href="products.html>Products</a>
-      <a href="contact.html">Contact</a>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navMenu">
+      <a href="index.html"><i class="fas fa-home"></i>Home</a>
+      <a href="login.html"><i class="fas fa-sign-in-alt"></i>Login</a>
+      <a href="register.html"><i class="fas fa-user-plus"></i>Register</a>
+      <a href="products.html"><i class="fas fa-box-open"></i>Products</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i>Contact</a>
     </nav>
   </header>
 
@@ -278,5 +310,16 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 MyStore - All rights reserved
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
