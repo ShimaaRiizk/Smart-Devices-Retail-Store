@@ -55,6 +55,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      align-items: center;
     }
 
     nav a {
@@ -73,6 +74,22 @@
 
     nav a:hover {
       color: darkolivegreen;
+    }
+
+    .logout-btn {
+      background-color: darkolivegreen;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #556b2f;
     }
 
     .main-content {
@@ -185,6 +202,11 @@
       nav a i {
         display: inline;
       }
+
+      .logout-btn {
+        margin: 10px 0 0;
+        width: 100%;
+      }
     }
 
     @media (max-width: 480px) {
@@ -212,6 +234,7 @@
       <a href="register.html">Register</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
+      <button class="logout-btn" onclick="location.href='index.html'">Logout</button>
     </nav>
   </header>
 
@@ -246,7 +269,6 @@
       nav.classList.toggle("active");
     }
 
-   
     document.getElementById("loginForm").addEventListener("submit", function(event) {
       event.preventDefault(); 
       alert("Login successfully"); 
