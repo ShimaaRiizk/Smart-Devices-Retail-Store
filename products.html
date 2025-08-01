@@ -26,10 +26,15 @@
     nav a:hover { color: darkolivegreen; }
     h2 { text-align: center; color: darkolivegreen; margin: 30px 0 20px; }
     .separator { width: 90%; margin: 20px auto; border-top: 1px solid #ddd; }
+
     .photo {
-      display: flex; justify-content: center; gap: 20px;
-      padding: 20px 40px 40px; flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px 40px 40px;
+      justify-items: center;
     }
+
     .card {
       background-color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 15px; text-align: center; width: 220px;
@@ -48,6 +53,7 @@
       margin: 5px;
     }
     .card button:hover { background-color: #556b2f; }
+
     #totalPrice {
       text-align: center; font-size: 18px; color: darkolivegreen; margin: 20px;
     }
@@ -55,6 +61,19 @@
       text-align: center; padding: 20px; font-size: 13px;
       color: #888; border-top: 1px solid #ddd;
     }
+
+    @media (max-width: 992px) {
+      .photo {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .photo {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
       .menu-icon { display: block; }
       nav {
@@ -63,9 +82,7 @@
         padding: 10px 20px; border-top: 1px solid #ddd;
       }
       nav.active { display: flex; }
-      .card { width: 45%; }
     }
-    @media (max-width: 480px) { .card { width: 100%; } }
   </style>
 </head>
 <body>
@@ -83,7 +100,7 @@
   <h2>Our Products</h2>
 
   <div class="photo" id="productContainer">
-
+    <!-- Product cards will be added here -->
   </div>
 
   <div style="text-align:center; margin-bottom: 20px;">
@@ -147,11 +164,6 @@
 
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("active");
-    }
-
-    function logout() {
-      alert("You have been logged out.");
-      window.location.href = "index.html";
     }
   </script>
 </body>
