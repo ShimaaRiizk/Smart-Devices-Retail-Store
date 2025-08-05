@@ -79,6 +79,7 @@
       border-top: 1px solid #ddd;
     }
 
+    /* Tablet and below */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -87,12 +88,7 @@
       }
 
       nav {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      nav a {
-        margin: 5px 0;
+        display: none; /* Hide navbar in mobile view */
       }
 
       .hero-section h1 {
@@ -100,6 +96,7 @@
       }
     }
 
+    /* Small phones */
     @media (max-width: 480px) {
       .logo {
         font-size: 20px;
@@ -115,7 +112,7 @@
   <header>
     <div class="logo">MyStore</div>
     <nav>
-      <a href="Home.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="login.html">Login</a>
       <a href="register.html">Register</a>
       <a href="products.html">Products</a>

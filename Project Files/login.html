@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MyStore - Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
       margin: 0;
@@ -13,7 +14,7 @@
     }
 
     body {
-      background-image: url('C:/Users/Best By/Downloads/imar1.jpg');
+      background-image: url('Images/imar1.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -28,9 +29,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.7);
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
+      position: relative;
     }
 
     .logo {
@@ -40,10 +42,20 @@
       margin-bottom: 10px;
     }
 
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      color: darkolivegreen;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
     nav {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      align-items: center;
     }
 
     nav a {
@@ -51,10 +63,33 @@
       color: #333;
       font-size: 16px;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    nav a i {
+      display: none;
     }
 
     nav a:hover {
       color: darkolivegreen;
+    }
+
+    .logout-btn {
+      background-color: darkolivegreen;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #556b2f;
     }
 
     .main-content {
@@ -142,37 +177,35 @@
       background-color: #fff;
     }
 
-    /* Responsive Styling */
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+      .menu-icon {
+        display: block;
       }
 
       nav {
+        display: none;
         flex-direction: column;
         width: 100%;
+        margin-top: 10px;
+      }
+
+      nav.active {
+        display: flex;
       }
 
       nav a {
-        margin: 5px 0;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        color: darkolivegreen;
       }
 
-      .logo {
-        font-size: 22px;
+      nav a i {
+        display: inline;
       }
 
-      .login-box {
-        padding: 15px;
-      }
-
-      .login-box h2 {
-        font-size: 20px;
-      }
-
-      .login-btn {
-        font-size: 14px;
+      .logout-btn {
+        margin: 10px 0 0;
+        width: 100%;
       }
     }
 
@@ -195,18 +228,19 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <nav>
-      <a href="Home.html">Home</a>
-      <a href="login.html">Login</a>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
       <a href="register.html">Register</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
+      <button class="logout-btn" onclick="logout()">Logout</button>
     </nav>
   </header>
 
   <div class="main-content">
     <div class="login-box">
-      <form action="#" method="POST">
+      <form id="loginForm">
         <h2>Login to MyStore</h2>
         <p>Please enter your login credentials below.</p>
 
@@ -228,5 +262,25 @@
   <footer>
     &copy; 2025 MyStore - All rights reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      alert("Login successfully"); 
+      window.location.href = "products.html"; 
+    });
+
+    function logout() {
+      const confirmLogout = confirm("Are you sure you want to log out?");
+      if (confirmLogout) {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
 </body>
 </html>
