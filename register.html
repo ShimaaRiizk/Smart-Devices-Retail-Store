@@ -1,19 +1,23 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Responsive Registration Form</title>
+
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif; 
+      font-family: Arial, sans-serif;
     }
 
     body {
-      background-image: url('C:/Users/Best By/Downloads/imar1.jpg');
+      background-image: url('Images/imar1.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -22,30 +26,37 @@
       display: flex;
       flex-direction: column;
     }
-    
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.7);
       border-bottom: 1px solid #ddd;
-      width: 100%;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       flex-wrap: wrap;
+      position: relative;
     }
 
-    header .logo {
+    .logo {
       font-size: 24px;
       color: darkolivegreen;
       font-weight: bold;
-      margin-bottom: 10px;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      color: darkolivegreen;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
+      align-items: center;
     }
 
     nav a {
@@ -53,10 +64,26 @@
       color: #333;
       font-size: 16px;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav a i {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: darkolivegreen;
+      padding: 6px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     nav a:hover {
       color: darkolivegreen;
+    }
+
+    nav a:hover i {
+      background-color: darkolivegreen;
+      color: #fff;
     }
 
     .form-wrapper {
@@ -64,7 +91,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px; 
+      padding: 40px 20px;
     }
 
     .container {
@@ -72,7 +99,7 @@
       background-color: #fff;
       padding: 25px 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       color: #333;
       width: 100%;
     }
@@ -106,7 +133,7 @@
       font-size: 16px;
       border-radius: 5px;
       padding-left: 15px;
-      border: 1px solid #ccc; 
+      border: 1px solid #ccc;
       margin-top: 5px;
     }
 
@@ -116,7 +143,7 @@
     }
 
     .forgot-password a {
-      color: darkolivegreen; 
+      color: darkolivegreen;
       text-decoration: none;
       font-size: 14px;
     }
@@ -136,7 +163,7 @@
       border-radius: 5px;
       color: #fff;
       font-size: 18px;
-      background-color: darkolivegreen; 
+      background-color: darkolivegreen;
       border: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -153,7 +180,7 @@
     }
 
     .signup a {
-      color: darkolivegreen; 
+      color: darkolivegreen;
       text-decoration: none;
     }
 
@@ -161,12 +188,36 @@
       text-decoration: underline;
     }
 
-    /* Responsive Design */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid #ddd;
+    }
+
     @media (max-width: 768px) {
-      header {
+      .menu-icon {
+        display: block;
+      }
+
+      nav {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav a {
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        color: darkolivegreen;
+      }
+
+      nav.active {
+        display: flex;
       }
 
       .user-details .input-box {
@@ -177,21 +228,16 @@
         font-size: 22px;
       }
 
-      nav {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      nav a {
-        margin: 5px 0;
-      }
-
       .button input {
         font-size: 16px;
       }
     }
 
     @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
+
       .container {
         padding: 20px;
       }
@@ -209,9 +255,9 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <nav>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navMenu">
       <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
       <a href="register.html">Register</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
@@ -265,5 +311,16 @@
       </div>
     </div>
   </div>
+
+  <footer>
+    &copy; 2025 MyStore - All rights reserved
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>

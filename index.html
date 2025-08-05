@@ -13,7 +13,7 @@
     }
 
     body {
-      background-image: url('C:/Users/Best By/Downloads/imar1.jpg');
+      background-image: url('Images/Home.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -31,18 +31,26 @@
       background-color: rgba(255, 255, 255, 0.7);
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
+      position: relative;
     }
 
     .logo {
       font-size: 24px;
       color: darkolivegreen;
       font-weight: bold;
-      margin-bottom: 10px;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      color: darkolivegreen;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
     }
 
@@ -51,6 +59,8 @@
       color: #333;
       font-size: 16px;
       transition: color 0.3s ease;
+      background: none;
+      padding: 10px 0;
     }
 
     nav a:hover {
@@ -79,16 +89,27 @@
       border-top: 1px solid #ddd;
     }
 
-    /* Tablet and below */
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+      .menu-icon {
+        display: block;
       }
 
       nav {
-        display: none; /* Hide navbar in mobile view */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav a {
+        background: none;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        color: darkolivegreen;
+      }
+
+      nav.active {
+        display: flex;
       }
 
       .hero-section h1 {
@@ -96,7 +117,6 @@
       }
     }
 
-    /* Small phones */
     @media (max-width: 480px) {
       .logo {
         font-size: 20px;
@@ -111,7 +131,8 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <nav>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="login.html">Login</a>
       <a href="register.html">Register</a>
@@ -127,5 +148,12 @@
   <footer>
     &copy; 2025 MyStore - All rights reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>

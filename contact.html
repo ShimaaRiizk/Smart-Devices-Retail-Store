@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - MyStore</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
       margin: 0;
@@ -13,11 +14,11 @@
     }
 
     body {
-      background-image: url('C:/Users/Best By/Downloads/imar1.jpg');
+      background-image: url('Images/imar1.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      color: darkolivegreen;
+      color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -31,18 +32,26 @@
       background-color: rgba(255, 255, 255, 0.7);
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
+      position: relative;
     }
 
     .logo {
       font-size: 24px;
       color: darkolivegreen;
       font-weight: bold;
-      margin-bottom: 10px;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      color: darkolivegreen;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
       gap: 10px;
     }
 
@@ -51,6 +60,11 @@
       color: #333;
       font-size: 16px;
       transition: color 0.3s ease;
+      background: none;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     nav a:hover {
@@ -65,11 +79,11 @@
       width: 90%;
       margin: 40px auto;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      color: darkolivegreen;
     }
 
     #contactForm h1 {
       font-size: 24px;
-      color: darkolivegreen;
       margin-bottom: 10px;
       text-align: center;
     }
@@ -136,24 +150,26 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
+      .menu-icon {
+        display: block;
       }
 
       nav {
+        display: none;
         flex-direction: column;
         width: 100%;
+        margin-top: 10px;
       }
 
       nav a {
-        margin: 5px 0;
+        background: none;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+        color: darkolivegreen;
       }
 
-      #contactForm {
-        margin: 20px auto;
-        padding: 20px;
+      nav.active {
+        display: flex;
       }
     }
 
@@ -175,9 +191,9 @@
 <body>
   <header>
     <div class="logo">MyStore</div>
-    <nav>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav id="navMenu">
       <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
       <a href="register.html">Register</a>
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
@@ -206,5 +222,12 @@
   <footer>
     &copy; 2025 MyStore - All rights reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
